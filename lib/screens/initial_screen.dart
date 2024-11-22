@@ -3,7 +3,7 @@ import 'package:flutter_application_1/components/task.dart';
 
 class InitialScreen extends StatefulWidget {
 
-  const InitialScreen({Key? key}) : super(key: key);
+  const InitialScreen({super.key});
 
   @override
   State<InitialScreen> createState() => _InitialScreenState();
@@ -25,7 +25,7 @@ class _InitialScreenState extends State<InitialScreen> {
       ),
       body: AnimatedOpacity(
         opacity:  opacidade ? 1 : 0,
-        duration: Duration(milliseconds: 200),
+        duration: const Duration(milliseconds: 200),
         child: ListView(
           children: const [
             Task("Aprender Flutter", "assets/images/flutter.png", 3),
@@ -44,7 +44,7 @@ class _InitialScreenState extends State<InitialScreen> {
             opacidade = !opacidade;
           });
         },
-        child: Icon(Icons.remove_red_eye),
+        child: const Icon(Icons.remove_red_eye),
       ),
     );
   }
