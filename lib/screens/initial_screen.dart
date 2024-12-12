@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/components/task.dart';
+import 'package:flutter_application_1/screens/form_screen.dart';
 
 class InitialScreen extends StatefulWidget {
 
@@ -10,7 +11,6 @@ class InitialScreen extends StatefulWidget {
 }
 
 class _InitialScreenState extends State<InitialScreen> {
-  bool opacidade = true;
 
   @override
   Widget build(BuildContext context) {
@@ -23,28 +23,22 @@ class _InitialScreenState extends State<InitialScreen> {
         ),
         backgroundColor: Colors.purple,
       ),
-      body: AnimatedOpacity(
-        opacity:  opacidade ? 1 : 0,
-        duration: const Duration(milliseconds: 200),
-        child: ListView(
-          children: const [
-            Task("Aprender Flutter", "assets/images/flutter.png", 3),
-            Task("Aprofundar em Css", 'assets/images/css.png', 2),
-            Task("Melhorar Meu Portifólio", 'assets/images/git.png', 1),
-            Task("Voltar pro Inglês", 'assets/images/ingles.png', 3),
-            Task("Tocar Violão", 'assets/images/violao.png', 4),
-            Task("Ler 10 Páginas do livro", 'assets/images/livro.jpeg', 2),
-            SizedBox(height: 80,),
-          ],
-        ),
+      body: ListView(
+        children: const [
+          Task("Aprender Flutter", "assets/images/flutter.png", 3),
+          Task("Aprofundar em Css", 'assets/images/css.png', 2),
+          Task("Melhorar Meu Portifólio", 'assets/images/git.png', 1),
+          Task("Voltar pro Inglês", 'assets/images/ingles.png', 3),
+          Task("Tocar Violão", 'assets/images/violao.png', 4),
+          Task("Ler 10 Páginas do livro", 'assets/images/livro.jpeg', 2),
+          SizedBox(height: 80,),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          setState(() {
-            opacidade = !opacidade;
-          });
+          Navigator.push(context, MaterialPageRoute(builder: (context) => FormScreen(),),);
         },
-        child: const Icon(Icons.remove_red_eye),
+        child: const Icon(Icons.add),
       ),
     );
   }

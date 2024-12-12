@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 
 class FormScreen extends StatefulWidget {
@@ -13,7 +11,7 @@ class _FormScreenState extends State<FormScreen> {
   TextEditingController nameController = TextEditingController();
   TextEditingController difficultyController = TextEditingController();
   TextEditingController imageController = TextEditingController();
-  
+
   final _formKey = GlobalKey<FormState>();
 
   @override
@@ -53,7 +51,7 @@ class _FormScreenState extends State<FormScreen> {
                       controller: nameController,
                       decoration: const InputDecoration(
                           border: OutlineInputBorder(),
-                          labelText: 'Usuário',
+                          labelText: 'Nome',
                           fillColor: Colors.white70,
                           filled: true),
                     ),
@@ -82,9 +80,9 @@ class _FormScreenState extends State<FormScreen> {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: TextFormField(
-                      validator: (value){
-                        if (value!.isEmpty){
-                          return'Insira um URL de Imagem';
+                      validator: (value) {
+                        if (value!.isEmpty) {
+                          return 'Insira um URL de Imagem';
                         }
                         return null;
                       },
@@ -122,11 +120,17 @@ class _FormScreenState extends State<FormScreen> {
                   ),
                   ElevatedButton(
                     onPressed: () {
-                      if(_formKey.currentState!.validate()){
-                      print(nameController.text);
-                      print(difficultyController.text);
-                      print(imageController.text);
-                      
+                      if (_formKey.currentState!.validate()) {
+                        print(nameController.text);
+                        print(difficultyController.text);
+                        print(imageController.text);
+
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(
+                            content: Text('Salvando nova Tarefa!'),
+                          ),
+                        );
+                          Navigator.pop(context);
                       }
                     },
                     child: const Text("Adicionar"),
