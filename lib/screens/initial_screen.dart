@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/components/task.dart';
-import 'package:flutter_application_1/data/task_inherited.dart';
-import 'package:flutter_application_1/screens/form_screen.dart';
+import 'package:Tarefas/components/task.dart';
+import 'package:Tarefas/data/task_inherited.dart';
+import 'package:Tarefas/screens/form_screen.dart';
 
 class InitialScreen extends StatefulWidget {
   const InitialScreen({super.key});

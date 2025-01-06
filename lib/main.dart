@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/data/task_inherited.dart';
-import 'package:flutter_application_1/screens/initial_screen.dart';
+import 'package:Tarefas/data/task_inherited.dart';
+import 'package:Tarefas/screens/initial_screen.dart';
 
 void main() {
   runApp( const MyApp());
